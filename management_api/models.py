@@ -1,44 +1,33 @@
-from django.db import models
-<<<<<<< HEAD
+
 from django.contrib.auth.models import AbstractUser, Group, Permission
+from django.db import models
 
 class User(AbstractUser):
     email = models.EmailField(unique=True)
 
     groups = models.ManyToManyField(
         Group,
-        related_name='custom_user_groups',  # Unique related name
+        related_name='custom_user_groups',  
         blank=True,
         help_text='The groups this user belongs to.',
         verbose_name='groups',
     )
     user_permissions = models.ManyToManyField(
         Permission,
-        related_name='custom_user_permissions',  # Unique related name
+        related_name='custom_user_permissions',  
         blank=True,
         help_text='Specific permissions for this user.',
         verbose_name='user permissions',
     )
 
-=======
-from django.contrib.auth.models import AbstractUser
 
-# Custom User model
-class User(AbstractUser):
-    email = models.EmailField(unique=True)
-
-# Project model
->>>>>>> b40ef55d18c4bea262482cc3f57618a529399512
 class Project(models.Model):
     name = models.CharField(max_length=255)
     description = models.TextField()
     owner = models.ForeignKey(User, on_delete=models.CASCADE, related_name='owned_projects')
     created_at = models.DateTimeField(auto_now_add=True)
 
-<<<<<<< HEAD
-=======
-# Project Members model
->>>>>>> b40ef55d18c4bea262482cc3f57618a529399512
+
 class ProjectMember(models.Model):
     ROLE_CHOICES = [
         ('Admin', 'Admin'),
@@ -48,11 +37,8 @@ class ProjectMember(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='projects')
     role = models.CharField(max_length=10, choices=ROLE_CHOICES)
 
-<<<<<<< HEAD
 
-=======
-# Task model
->>>>>>> b40ef55d18c4bea262482cc3f57618a529399512
+
 class Task(models.Model):
     STATUS_CHOICES = [
         ('To Do', 'To Do'),
@@ -73,11 +59,7 @@ class Task(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     due_date = models.DateTimeField()
 
-<<<<<<< HEAD
 
-=======
-# Comment model
->>>>>>> b40ef55d18c4bea262482cc3f57618a529399512
 class Comment(models.Model):
     content = models.TextField()
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='comments')
