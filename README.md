@@ -1,6 +1,7 @@
 ﻿# Project_management_Api using rest framework
 
-It's a CRUD API, it has user, project, project members, task, and comment tables. Data tables are accessible using POST, GET, PUT, and DELETE methods using the API.
+It's a CRUD API, it has user, project, project members, task, and comment tables. Data tables are accessible using POST, GET, PUT, and DELETE methods using the API.<br>
+**Serializers have been implemented to fetch the data in JSON format.**
 Follow the Postman documentation for more detail and clarity<br>
 **Postman: https://documenter.getpostman.com/view/40693146/2sAYJ6DLZu**<br>
 
