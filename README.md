@@ -1,5 +1,5 @@
 ﻿# Project_management_Api using rest framework
-=======
+
 It has user, project, project members, task, and comment tables. Data tables are accessible using POST, GET, PUT, and DELETE methods using the API.
 Follow the postman documentation for more detail and clarity
 **Postman: https://documenter.getpostman.com/view/40693146/2sAYJ6DLZu**
